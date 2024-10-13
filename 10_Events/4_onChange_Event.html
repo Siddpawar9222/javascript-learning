@@ -1,0 +1,36 @@
+//Better Example
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <label>Enter your Name</label>
+      <input type="text" placeholder="Enter your Name" id="sp" />
+    </form>
+    <p>Select one of the favourite fruit from the given list to display.</p>
+    <select id="Choose" onchange="Func_a()">
+      <option value="Chico">Chico</option>
+      <option value="Apple">Apple</option>
+      <option value="Guava">Guava</option>
+      <option value="Pineapple">Pineapple</option>
+    </select>
+    
+    <p>Get one of the fruits to consume and then digest it.</p>
+    <p id="demo1"></p>
+    <script>
+      function Func_a() { 
+        // var name1 = document.getElementById("sp").value;
+        var name1=document.querySelector("#sp").value ;
+        var x_ip = document.getElementById("Choose").value;
+        document.getElementById(
+          "demo1"
+        ).innerHTML = `Thanks ${name1} You selected ${x_ip} fruit`;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <p>Click Here to start Counting</p>
+      <p id="dis"></p>
+      <button id="btn">Start</button>
+      <p>Click Here to Stop the Count</p>
+      <button id="btn2">Click Here</button>
+    </div>
+    <script>
+      const myCount = document.querySelector("#btn");
+      const mydis = document.querySelector("#dis");
+      const stop1 = document.querySelector("#btn2");
+      var num = 0;
+      var reference;
+      const showCount = () => {
+        mydis.innerHTML = "Please Wait .......";
+        reference = setInterval(() =>
+          //reference has to be give for clearInterval
+          {
+            mydis.innerHTML = `${num}`;
+            num++;
+          }, 1000);
+      };
+
+      myCount.addEventListener("click", showCount);
+      stop1.addEventListener("click", () => {
+        clearInterval(reference);
+      });
+    </script>
+  </body>
+</html>
+<!-- 
+  setInterval :
+  setInterval is a JavaScript function used to repeatedly execute a specified function or a block of code at a specified time interval. It's a way to create timed actions or animations on a web page
+  
+  clearInterval:
+  clearInterval() is a JavaScript function that is used to stop the execution of a function that was previously started using setInterval(). When you use setInterval() to repeatedly execute a function at a specified time interval, you may want to stop this periodic execution at some point, and that's when clearInterval() comes in handy.
+ -->

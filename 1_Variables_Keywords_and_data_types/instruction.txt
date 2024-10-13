@@ -1,0 +1,9 @@
+What is node used for? 
+  Node allows developers to write JavaScript code that runs directly in a computer process itself instead of in a browser . 
+
+To run JavaScript file in VS code first 
+ -- You need to install code runner extension from us code and also you need to install also node JS
+
+
+to run JavaScript file in terminal or manually
+ -- give proper path in terminal where which file is located and type node filename.js      

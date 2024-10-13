@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="grandparent">
+      <div class="parent-1 parent"></div>
+      <div class="parent-2 parent"></div>
+
+      Text
+      <!-- comment -->
+      <br />
+      <span class="child">child</span>
+    </div>
+
+    <script>
+      // const parents =document.getElementsByClassName("parent");
+      // console.log(parents);
+
+      // const grandparents = document.querySelector(".grandparent");
+
+      // const child = document.createElement("div");
+      // child.classList.add("parent");
+      // grandparents.appendChild(child) ;
+      // console.log(parents);
+      //In above example , parent list automatically updated
+      //--------------------------------------------------------------------------------------------
+
+      // const parents =document.querySelectorAll(".parent");
+      // console.log(parents);
+
+      // const grandparents = document.querySelector(".grandparent");
+
+      // const child = document.createElement("div");
+      // child.classList.add("parent");
+      // grandparents.appendChild(child) ;
+      // console.log(parents);              
+      ////In above example , parent list doesnt () updated automatically .
+      //--------------------------------------------------------------------------------------------
+      const parents = document.querySelectorAll(".parent");
+      console.log(parents);
+
+      const grandparents = document.querySelector(".grandparent");
+
+      const child = document.createElement("div");
+      child.classList.add("parent");
+      grandparents.appendChild(child);
+      console.log(document.querySelectorAll(".parent")); //We changed the update using querySelectorAll
+      //--------------------------------------------------------------------------
+      // querySelectorAll returns a static NodeList, which means that it does not update when the contents of the document change. getElementsByClassName returns a live HTMLCollection, which updates when the contents of the document change. (Do it later............)
+
+      // querySelectorAll supports all CSS selectors, so it's more versatile and flexible. getElementsByClassName only supports selecting elements by class name.
+
+      // querySelectorAll returns a NodeList, which is not an array, but it has similar properties and methods. You can convert it to an array using Array.from() or [].slice.call(). getElementsByClassName returns an HTMLCollection, which is an array-like object.
+
+      // querySelectorAll is faster than getElementsByClassName when selecting by class name. When selecting by other selectors, the difference in performance may be negligible.
+
+      // In general, it's recommended to use querySelectorAll when you need to select elements based on more complex CSS selectors, or when you need a static list of elements that won't change. Use getElementsByClassName when you need a live list of elements and you're only selecting by class name.
+    </script>
+  </body>
+</html>

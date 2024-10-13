@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using change event for Input elements</title>
+</head>
+
+<body align="center">
+    <input type="text" class="txtclass">
+    <input type="button" value="Click me">
+    </br>
+    <br>
+    <br>
+    <select id="lang" onchange="selectElement">
+        <option value="Select a language">Select a language</option>
+        <option value="JavaScript">JavaScript</option>
+        <option value="TypeScript">TypeScript</option>
+        <option value="PHP">PHP</option>
+        <option value="Python">Python</option>
+        <option value="Java">Java</option>
+    </select>
+    <br>
+    <label class="show"> </label>
+     <label id="show1"> </label>
+
+    <script>
+        let source = document.querySelector('.txtclass');
+        let source2 = document.querySelector('#lang');
+
+        let target = document.querySelector('.show');
+        source.addEventListener('change', function () {
+            target.textContent = this.value;
+        }); 
+        let target1 = document.querySelector('#show1'); 
+        source2.addEventListener('change', function () {
+            target1.textContent = this.value;
+        });  
+    </script>
+</body>
+
+</html>

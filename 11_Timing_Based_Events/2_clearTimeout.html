@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <p>Click Here to get Hello Massage</p>
+            <button id="btn" onclick="myVar=setTimeout(fun2 ,3000)">Click Here</button>
+            <p>Click Here to Stop  massage</p>
+            <button id="btn1" onclick="clearTimeout(myVar)">Stop it</button>
+        </div>
+    </div>
+    <script>
+        function fun2() {
+            alert("Hello Darling");
+        }
+    </script>
+</body>
+</html>

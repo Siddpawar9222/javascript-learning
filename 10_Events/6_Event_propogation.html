@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      #div1 {
+        width: 500px;
+        height: 500px;
+        background-color: aquamarine;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #div2 {
+        width: 300px;
+        height: 300px;
+        background-color: beige;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #div3 {
+        width: 100px;
+        height: 100px;
+        background-color: blueviolet;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h3>What is Event propagation, capturing, bubbling?</h3>
+    <!-- Here we made nested div containers -->
+    <div id="div1">
+      <div id="div2">
+        <div id="div3"></div>
+      </div>
+    </div>
+
+    <!-- Javascript code for event bubbling -->
+    <script>
+      let div1 = document.querySelector("#div1");
+      let div2 = document.querySelector("#div2");
+      let div3 = document.querySelector("#div3");
+
+      div1.addEventListener(
+        "click",
+        function (event) {
+          alert("Parent 1 event clicked");
+        },
+        true
+      );
+
+      div2.addEventListener(
+        "click",
+        function (event) {
+          alert("child 2 event clicked");
+        },
+        true
+      );
+
+      div3.addEventListener(
+        "click",
+        function (event) {
+          alert("Child 3  event clicked");
+        },
+        true
+      );
+    </script>
+  </body>
+</html>
+
+<!-- Event Propagation determines in which order the elements receive the event. There are two ways to handle this event propagation order of HTML DOM is Event Bubbling and Event Capturing. 
+
+1. Bubbling: When an event happens on a component, it first runs the event handler on it, then on its parent component, then all the way up on other ancestors’ components. (It is default) , all event handles through this order from center component event to outermost component event. We have to write false value in .addEventListerner(But it is default so no need to write) 
+
+2. Capturing: It is the opposite of bubbling. The event handler is first on its parent component and then on the component where it was actually wanted to fire that event handler. In short, it means that the event is first captured by the outermost element and propagated to the inner elements. It is also called trickle down. We have to write true value in .addEventListerner -->

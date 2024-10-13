@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <script>
+        // By function Event
+        function sayHello()
+        {
+            document.write("Hello World");
+        }
+    </script>
+    
+</head>
+<body>
+    <p>Click the following button For Event</p>
+     <form action="#">
+        <input id="hello" type="button"  onclick="sayHello()" value="Say Hello" >
+     </form>
+     <br>
+     <!-- inline Event -->
+     <a href="#" class="link" id="anchor" onclick="alert('Try Again')" >Click Here</a>
+     <br>
+     <br>
+      
+     <!-- Using documents method   (Overwrite)-->
+     <a href="" class="link" id="anchor1">Click Here for Fun</a>
+     <script>
+        var  d = document.getElementById("anchor1");
+        d.onclick = function(){                // on-click-It  override the function
+            alert("Its Event") ;
+        }
+    //    d.onclick = ()=>{
+    //       alert("Its override") ;
+    //    }
+     </script>
+     <br>
+     <br>
+     <!-- addEventListener method (We can add Multiple Event or code . It does not override the function) -->
+    <a href="#" id="anchor2">Click Here for Advanced</a>
+    <script>
+            var  e = document.getElementById("anchor2");
+            e.addEventListener("click" , function()
+            {
+                alert("You are using advanced Method")
+            })
+             
+            // Event Object  e.g are MouseEvent,KeyboardEvent, FocusEvent
+            var k = document.getElementById("anchor2");
+            k.addEventListener( "click" , ()=>
+            {
+                alert("Hii How are you")
+                console.log(event);
+                console.log(event.target);
+            })
+    </script>
+      
+</body> 
+</html>
+<!-- 
+HTML events are "things" that happen to HTML elements.
+When JavaScript is used in HTML pages, JavaScript can "react" on these events.
+ Methods to write Events :
+ -By function Event
+ -inline event
+ -using document object
+ -addEventListener
+ 
+ -->

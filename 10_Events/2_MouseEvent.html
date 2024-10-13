@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MouseEvent</title>
+    <style>
+        #para
+        {
+            background-color: aqua;
+            color: white;
+        }
+        .container
+        {
+            background-color: blue;
+            color: whitesmoke;
+            width: 200px;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+    </style>
+    
+</head>
+<body>
+      <p id="para" onmousedown="mouseDown()" onmouseup="mouseUp()">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi temporibus maiores incidunt, facere dolores nulla ratione veniam ipsa nostrum obcaecati tempore itaque qui laborum officiis perferendis aperiam saepe quibusdam delectus.</p>
+      <br>
+      <br>
+      <div class="container" id="box">
+        <div id="box1">Click me</div>
+      </div>
+      <script>
+        var m= document.getElementById("box");
+        m.addEventListener("mouseenter" , ()=>
+        {
+            m.style.backgroundColor="red";
+        });
+
+        m.addEventListener("mouseleave" ,()=>
+        {
+            m.style.backgroundColor="black";
+        });
+    
+      </script>
+     <!-- For paragraph -->
+      <script>
+        function mouseDown()
+        {
+           document.getElementById("para").style.color="red";
+        }  
+        function mouseUp()
+        {
+           document.getElementById("para").style.color="black";  
+        } 
+</script>
+</body>
+</html>
