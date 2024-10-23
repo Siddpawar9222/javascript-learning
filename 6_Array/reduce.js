@@ -5,7 +5,7 @@
 // console.log(numUp);
 
 //Practice 
-var arr = [ 45 , 45 , 90 ];
+var arr = [ 45 , 45 , 90,150 ];
 const k = arr.reduce((accumulator,Elements ,index ,Arrays)=>{
     return (accumulator +=Elements) ;
 }, 100) ;
